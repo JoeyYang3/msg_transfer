@@ -1,0 +1,22 @@
+    {  
+        "manifest_version": 2,  
+      
+        "name": "Say Hello",  
+        "description": "This extension say hello to you.",  
+        "version": "1.0",  
+        "permissions": ["tabs", "<all_urls>"],  
+        "browser_action": {  
+            "default_icon": "icon.png",  
+            "default_popup": "popup.html"  
+        },  
+        "background": {  
+            "scripts": ["jquery.js","background.js"]
+        },
+        "content_scripts" : [
+              {
+             "matches":["https://www.zhihu.com/question/*"],
+              "js": ["jquery.js","contentscript.js"]  
+              }
+        ]
+
+    }  
